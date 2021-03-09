@@ -19,5 +19,5 @@ def audiofile():
     )
     return resp.json()
 
-if __name__ == '__main__':
-    BASE.run(host='0.0.0.0', reloader=True, debug=True)
+# if __name__ == '__main__':
+#     BASE.run(host='0.0.0.0', reloader=True, debug=True)
