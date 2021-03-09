@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+google-cloud-texttospeech = "*"
+bottle = "*"
+boto3 = "==1.17.22"
+requests = "*"
+
+[dev-packages]
+functions-framework = "*"
+
+[requires]
+python_version = "3.8"
