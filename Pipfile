@@ -8,6 +8,7 @@ google-cloud-texttospeech = "*"
 bottle = "*"
 boto3 = "==1.17.22"
 requests = "*"
+gunicorn = "*"
 
 [dev-packages]
 functions-framework = "*"
