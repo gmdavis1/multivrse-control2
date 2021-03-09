@@ -1,1 +1,1 @@
-web: gunicorn --daemon --workers 2 index:BASE --reload
+web: gunicorn --workers 2 index:BASE --reload
