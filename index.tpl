@@ -28,6 +28,7 @@
             </form>
             <div class="ui hidden divider"></div>
             <img class="ui centered large image" src="https://mttsbucket.s3.us-east-2.amazonaws.com/Diagram1.png" alt="" srcset="">
+            <a href="/view-queue">View audio files</a>
     </div>
     
 

@@ -1,6 +1,8 @@
-from bottle import template, request, Bottle
+from bottle import template, request, Bottle, redirect
+import json
 import requests
 BASE = Bottle()
+import utils
 
 # https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize
 
@@ -17,7 +19,21 @@ def audiofile():
         'https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize',
         json={'source_text': t}
     )
-    return resp.json()
+    redirect('/view-queue')
 
+
+@BASE.route('/queue', method='GET')
+def queue():
+    msg = utils.new_message()
+    if msg:
+        print(msg)
+        return msg
+    else:
+        return None
+
+
+@BASE.route('/view-queue')
+def vqueue():
+    return template('poll.tpl')
 # if __name__ == '__main__':
 #     BASE.run(host='0.0.0.0', reloader=True, debug=True)
