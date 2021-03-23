@@ -29,7 +29,7 @@ Queue on /view-queue
                   </div>
             </form>
             <div class="ui hidden divider"></div>
-            <img class="ui centered large image" src="https://imgur.com/Z6jSRwM.png" alt="" srcset="">
+            <img class="ui centered large image" src="https://i.imgur.com/yXUaqz2.png" alt="" srcset="">
             <a href="/view-queue">View audio files</a>
     </div>
     
