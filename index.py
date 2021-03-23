@@ -19,7 +19,7 @@ def audiofile():
         'https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize',
         json={'source_text': t}
     )
-    redirect('/view-queue')
+    redirect('/sock')
 
 
 @BASE.route('/queue', method='GET')
@@ -31,6 +31,9 @@ def queue():
     else:
         return None
 
+@BASE.route('/sock')
+def sock_et():
+    return template('sock.tpl')
 
 @BASE.route('/view-queue')
 def vqueue():
