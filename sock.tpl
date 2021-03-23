@@ -6,10 +6,11 @@
 </head>
 <body>
 <div class="ui container">
-    <h2>Provides access to AWS S3 notifications via AWS SQS</h2>
-    <h3 class="ui segment">Audio files are auto-deleted after 5mins. Please wait we are polling the queue for a file</h3>
+    <h2>Provide access to S3 notifications via AWS Websockets</h2>
     <a href="/">Create an audio file</a>
-    <p>NOTE: Files can be set to expire or delete via delete_message() after use. Files are not automatically removed from the queue when pulled in<br></p>
+	<p>Uses JS Implementaton of websockets see https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API </p>
+	<p>Messages/Notification should be deleted/removed from the queue once read. This can be done within the lambda function that
+	manages sockets and queue operations.</p>
     <table class="striped ui  large table">
         <thead>
             <tr>

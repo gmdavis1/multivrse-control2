@@ -9,10 +9,12 @@
 </head>
 <body>
 <div class="ui container">
-    <div class="ui hidden divider" style="padding-top: 100px;"></div>
+<p>
+Sockets on /sock <a href="/sock">Socket Page</a><br>
+Queue on /view-queue
+</p>
 <div class="ui two column grid">
 
-    
     <div class="column">
         <form class="ui form", action="/audiofile" method="POST">
             <div class="ui segment very padded">

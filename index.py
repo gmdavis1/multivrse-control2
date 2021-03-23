@@ -12,14 +12,14 @@ def index():
     return template('index.tpl')
 
 
-@BASE.route('/audiofile', method='POST')
+@BASE.route('/audiofile', method=['GET', 'POST'])
 def audiofile():
     t = request.POST['text']
     resp = requests.post(
         'https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize',
         json={'source_text': t}
     )
-    redirect('/sock')
+    redirect('/')
 
 
 @BASE.route('/queue', method='GET')
