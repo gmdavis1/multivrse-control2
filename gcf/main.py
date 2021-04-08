@@ -7,6 +7,7 @@ from flask import jsonify
 client = texttospeech.TextToSpeechClient()
 boto3s3 = boto3.client('s3')
 
+MECHANIC_VOICE = {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": 0}
 
 def synthesize_text(request):
     """Run text to speech."""
@@ -15,11 +16,12 @@ def synthesize_text(request):
     text = texttospeech.SynthesisInput(text=source_text.get('source_text'))
     voice = texttospeech.VoiceSelectionParams(
         language_code="en-US",
-        name="en-US-Standard-C",
-        ssml_gender=texttospeech.SsmlVoiceGender.FEMALE,
+        name=MECHANIC_VOICE["voice"]
     )
     config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3
+        audio_encoding=texttospeech.AudioEncoding.MP3,
+        speaking_rate=MECHANIC_VOICE["speed"],
+        pitch=MECHANIC_VOICE["pitch"]
     )
     return client.synthesize_speech(
         request={"input": text, "voice": voice, "audio_config": config}
@@ -39,7 +41,7 @@ def upload_to_s3(binary_data, filename):
 
     return boto3s3.put_object(
         Body=binary_data.audio_content,
-        Bucket='mttsbucket',
+        Bucket=S3_BUCKET,
         Key=filename
     )
 
@@ -57,4 +59,4 @@ def mtts(request):
     except Exception as e:
         return {'error': e, 'status': 'fail'}
 
-    return {'file': f'https://mttsbucket.s3.us-east-2.amazonaws.com/{filename}'}
+    return {'file': f'https://{S3_BUCKET}.s3.us-east-2.amazonaws.com/{filename}'}
