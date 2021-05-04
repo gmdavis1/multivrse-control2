@@ -31,22 +31,28 @@
 
 <script>
 var message = ''
+// 
 var action = JSON.parse('{"action": "sendmessage"}')
 const socket = new WebSocket('wss://rfgjune292.execute-api.us-east-2.amazonaws.com/production');
+
+// socket.send(message)
+
 socket.onmessage = function(event){
     message = JSON.parse(event.data).message
     console.log(message)
 };
-function getFile(){
 
-    socket.send(action)
-    if (message.audio){
-        console.log("We found an audio file")
-        $("#updates").append(`<tr><td><a href="https://mttsbucket.s3.us-east-2.amazonaws.com/${message.audio}">${message.audio}</a></td><td>${message.size}</td></tr>`)
-    }
+
+// function getFile(){
+
+//     socket.send(action)
+//     if (message.audio){
+//         console.log("We found an audio file")
+//         $("#updates").append(`<tr><td><a href="https://mttsbucket.s3.us-east-2.amazonaws.com/${message.audio}">${message.audio}</a></td><td>${message.size}</td></tr>`)
+//     }
     
-}
-setInterval(getFile, 3000)
+// }
+// setInterval(getFile, 3000)
 </script>
 
 
