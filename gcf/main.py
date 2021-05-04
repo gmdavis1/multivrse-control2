@@ -7,21 +7,21 @@ from flask import jsonify
 client = texttospeech.TextToSpeechClient()
 boto3s3 = boto3.client('s3')
 
-MECHANIC_VOICE = {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": 0}
+S3_BUCKET = "multivrse-audio"
 
 def synthesize_text(request):
     """Run text to speech."""
 
-    source_text = request.get_json(force=True)
-    text = texttospeech.SynthesisInput(text=source_text.get('source_text'))
+    source = request.get_json(force=True)
+    text = texttospeech.SynthesisInput(text=source.get('text'))
     voice = texttospeech.VoiceSelectionParams(
         language_code="en-US",
-        name=MECHANIC_VOICE["voice"]
+        name=source.get("voice")
     )
     config = texttospeech.AudioConfig(
         audio_encoding=texttospeech.AudioEncoding.MP3,
-        speaking_rate=MECHANIC_VOICE["speed"],
-        pitch=MECHANIC_VOICE["pitch"]
+        speaking_rate=source.get("speed"),
+        pitch=source.get("pitch")
     )
     return client.synthesize_speech(
         request={"input": text, "voice": voice, "audio_config": config}
