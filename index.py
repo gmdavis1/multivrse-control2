@@ -3,6 +3,7 @@ import json
 import requests
 BASE = Bottle()
 import utils
+from websocket import create_connection
 
 # https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize
 
@@ -19,6 +20,9 @@ def audiofile():
         'https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize',
         json={'source_text': t}
     )
+    ws = create_connection("wss://rfgjune292.execute-api.us-east-2.amazonaws.com/production")
+    ws.send(resp)
+    ws.close()
     # send response through the socket
     # redirect to socket page with POST json 
     redirect('/') # with POST of resp
