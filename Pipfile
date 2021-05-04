@@ -9,7 +9,7 @@ bottle = "*"
 boto3 = "==1.17.22"
 requests = "*"
 gunicorn = "*"
-websocket = "*"
+websocket-client = "*"
 
 [dev-packages]
 functions-framework = "*"
