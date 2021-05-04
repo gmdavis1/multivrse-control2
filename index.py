@@ -20,10 +20,7 @@ def audiofile():
         'https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize',
         json={'source_text': t}
     )
-    try:
-        print(resp)
-    except:
-        print("NO RESPONSE")
+    print("RESPONSE IS", resp)
     ws = create_connection("wss://rfgjune292.execute-api.us-east-2.amazonaws.com/production")
     ws.send(resp)
     ws.close()
