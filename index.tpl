@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.css" />
-    <title>Document</title>
+    <title>MultiVRse control panel</title>
 </head>
 <body>
 <div class="ui container">
 <p>
 Sockets on /sock <a href="/sock">Socket Page</a><br>
-Queue on /view-queue
 </p>
 <div class="ui two column grid">
 
