@@ -9,9 +9,6 @@
 </head>
 <body>
 <div class="ui container">
-<p>
-Sockets on /sock <a href="/sock">Socket Page</a><br>
-</p>
 <div class="ui two column grid">
 
     <div class="column">

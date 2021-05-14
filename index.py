@@ -30,7 +30,7 @@ def audiofile():
     # don't need to keep the socket open here because only sending and never receiving
     ws = create_connection(SOCKET_URL)
     message = {
-        "action": "audio",
+        "action": "sendmessage",
         "data": filepath
     }
     ws.send(json.dumps(message))
