@@ -19,7 +19,7 @@ Sockets on /sock <a href="/sock">Socket Page</a><br>
             <div class="ui segment very padded">
                 <div class="field">
                     <label>Text</label>
-                    <input type="text" name="text"  placeholder="Stuff to say">
+                    <input type="text" name="text"  placeholder="Stuff to say" autofocus>
                   </div>
 
             

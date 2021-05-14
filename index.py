@@ -5,7 +5,7 @@ BASE = Bottle()
 from websocket import create_connection
 
 CLOUD_FUNCTION_URL = "https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize"
-SOCKET_URL = "wss://rfgjune292.execute-api.us-east-2.amazonaws.com/production"
+SOCKET_URL = "wss://e5pvp3ghmc.execute-api.us-east-2.amazonaws.com/Prod"
 
 MECHANIC_VOICE = {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": 0}
 
@@ -24,14 +24,14 @@ def audiofile():
                 "pitch": MECHANIC_VOICE["pitch"]}
     )
     filepath = resp.json()["file"]
-    print(f"Audio file for {t} created at {filepath}")
+    print(f"Audio file for \"{t}\" created at {filepath}")
 
     # connect to websocket and send json with the instructions/filepath, then close
     # don't need to keep the socket open here because only sending and never receiving
     ws = create_connection(SOCKET_URL)
     message = {
-        "type": "audio",
-        "url": filepath
+        "action": "audio",
+        "data": filepath
     }
     ws.send(json.dumps(message))
     ws.close()
