@@ -31,7 +31,11 @@ def audiofile():
     ws = create_connection(SOCKET_URL)
     message = {
         "action": "sendmessage",
-        "data": filepath
+        "data": {
+            "scene": "garage",
+            "action": "playaudio",
+            "value": filepath
+        }
     }
     ws.send(json.dumps(message))
     ws.close()

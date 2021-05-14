@@ -24,8 +24,6 @@
                     <button class="ui primary fluid button" type="submit">GO</button>
                   </div>
             </form>
-            <div class="ui hidden divider"></div>
-            <a href="/view-queue">View audio files</a>
     </div>
     
 
