@@ -8,8 +8,16 @@ CLOUD_FUNCTION_URL = "https://us-central1-mtts-307011.cloudfunctions.net/tts-syn
 SOCKET_URL = "wss://e5pvp3ghmc.execute-api.us-east-2.amazonaws.com/Prod"
 
 VOICES = {
-    "garage": {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": -2},
-    "doctor": {"voice": "en-US-Wavenet_E", "speed": 1.0, "pitch": 2},
+    "garage": {
+        "voice": {"languageCode": "en-us" "name": "en-US-Wavenet_D", "ssmlGender": "MALE"},
+        "speed": 1.0, 
+        "pitch": 0
+    },
+    "doctor": {
+        "voice": {"languageCode": "en-us" "name": "en-US-Wavenet_E", "ssmlGender": "FEMALE"}, 
+        "speed": 1.0, 
+        "pitch": 0
+    },
 }
 
 @BASE.route('/')
@@ -32,7 +40,7 @@ def audiofile(scene):
                 "pitch": scene_voice["pitch"]}
     )
     filepath = resp.json()["file"]
-    print(f"Audio file for \"{t}\" created at {filepath}")
+    print(f"Audio file for {scene.upper()}: \"{t}\" created at {filepath}")
 
     # connect to websocket and send json with the instructions/filepath, then close
     # don't need to keep the socket open here because only sending and never receiving
