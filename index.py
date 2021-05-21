@@ -7,21 +7,29 @@ from websocket import create_connection
 CLOUD_FUNCTION_URL = "https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize"
 SOCKET_URL = "wss://e5pvp3ghmc.execute-api.us-east-2.amazonaws.com/Prod"
 
-MECHANIC_VOICE = {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": 0}
+VOICES = {
+    "garage": {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": 0},
+    "doctor": {"voice": "en-US-Wavenet_E", "speed": 1.0, "pitch": 0},
+}
 
 @BASE.route('/')
 def index():
     return template('index.tpl')
 
-@BASE.route('/audiofile', method=['GET', 'POST'])
+@BASE.route('/<scene>')
+def index():
+    return template('index.tpl', focus=scene)
+
+@BASE.route('/audiofile/<scene>', method=['GET', 'POST'])
 def audiofile():
     t = request.POST['text']
+    scene_voice = VOICES[scene]
     resp = requests.post(
         CLOUD_FUNCTION_URL,
         json = {'text': t, 
-                "voice": MECHANIC_VOICE["voice"],
-                "speed": MECHANIC_VOICE["speed"],
-                "pitch": MECHANIC_VOICE["pitch"]}
+                "voice": scene_voice["voice"],
+                "speed": scene_voice["speed"],
+                "pitch": scene_voice["pitch"]}
     )
     filepath = resp.json()["file"]
     print(f"Audio file for \"{t}\" created at {filepath}")
@@ -32,12 +40,14 @@ def audiofile():
     message = {
         "action": "sendmessage",
         "data": {
-            "scene": "garage",
+            "scene": scene,
             "action": "playaudio",
             "value": filepath
         }
     }
-    ws.send(json.dumps(message))
+    sock_json = json.dumps(message)
+    print(f"Sending JSON {sock_json} through websocket {SOCKET_URL}")
+    ws.send(sock_json)
     ws.close()
 
-    redirect('/')
+    redirect('/<scene>')

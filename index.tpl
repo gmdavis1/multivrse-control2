@@ -12,13 +12,34 @@
 <div class="ui two column grid">
 
     <div class="column">
-        <form class="ui form", action="/audiofile" method="POST">
+        <form class="ui form", action="/audiofile/garage" method="POST">
             <div class="ui segment very padded">
                 <div class="field">
-                    <label>Text</label>
-                    <input type="text" name="text"  placeholder="Stuff to say" autofocus>
+                    <label>Mechanic speech</label>
+                    %if scene == "garage":
+                        <input type="text" name="text"  placeholder="Mechanic text" autofocus>
+                    %else:
+                        <input type="text" name="text"  placeholder="Mechanic text">
+                    %end
                   </div>
+            
+                  <div>
+                    <button class="ui primary fluid button" type="submit">GO</button>
+                  </div>
+            </form>
+    </div>
 
+    <div class="column">
+        <form class="ui form", action="/audiofile/doctor" method="POST">
+            <div class="ui segment very padded">
+                <div class="field">
+                    <label>Doctor speech</label>
+                    %if scene == "doctor":
+                        <input type="text" name="text"  placeholder="Doctor text" autofocus>
+                    %else:
+                        <input type="text" name="text"  placeholder="Doctor text">
+                    %end
+                  </div>
             
                   <div>
                     <button class="ui primary fluid button" type="submit">GO</button>
