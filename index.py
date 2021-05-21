@@ -17,11 +17,11 @@ def index():
     return template('index.tpl', focus="none")
 
 @BASE.route('/<scene>')
-def index():
+def index(scene):
     return template('index.tpl', focus=scene)
 
 @BASE.route('/audiofile/<scene>', method=['GET', 'POST'])
-def audiofile():
+def audiofile(scene):
     t = request.POST['text']
     scene_voice = VOICES[scene]
     resp = requests.post(
