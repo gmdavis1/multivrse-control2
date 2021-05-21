@@ -14,7 +14,7 @@ VOICES = {
 
 @BASE.route('/')
 def index():
-    return template('index.tpl')
+    return template('index.tpl', focus="none")
 
 @BASE.route('/<scene>')
 def index():
