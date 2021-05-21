@@ -3,18 +3,19 @@ import json
 import requests
 BASE = Bottle()
 from websocket import create_connection
+from google.cloud import texttospeech
 
 CLOUD_FUNCTION_URL = "https://us-central1-mtts-307011.cloudfunctions.net/tts-synthesize"
 SOCKET_URL = "wss://e5pvp3ghmc.execute-api.us-east-2.amazonaws.com/Prod"
 
 VOICES = {
     "garage": {
-        "voice": {"languageCode": "en-us", "name": "en-US-Wavenet_D", "ssmlGender": "MALE"},
+        "voice": {"name": "en-US-Wavenet_D", "ssmlGender": texttospeech.SsmlVoiceGender.MALE},
         "speed": 1.0, 
         "pitch": 0
     },
     "doctor": {
-        "voice": {"languageCode": "en-us", "name": "en-US-Wavenet_E", "ssmlGender": "FEMALE"}, 
+        "voice": {"name": "en-US-Wavenet_E", "ssmlGender": texttospeech.SsmlVoiceGender.FEMALE}, 
         "speed": 1.0, 
         "pitch": 0
     },
