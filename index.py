@@ -8,8 +8,8 @@ CLOUD_FUNCTION_URL = "https://us-central1-mtts-307011.cloudfunctions.net/tts-syn
 SOCKET_URL = "wss://e5pvp3ghmc.execute-api.us-east-2.amazonaws.com/Prod"
 
 VOICES = {
-    "garage": {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": 0},
-    "doctor": {"voice": "en-US-Wavenet_E", "speed": 1.0, "pitch": 0},
+    "garage": {"voice": "en-US-Wavenet_D", "speed": 1.0, "pitch": -2},
+    "doctor": {"voice": "en-US-Wavenet_E", "speed": 1.0, "pitch": 2},
 }
 
 @BASE.route('/')
