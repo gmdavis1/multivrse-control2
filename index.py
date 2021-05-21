@@ -50,4 +50,4 @@ def audiofile():
     ws.send(sock_json)
     ws.close()
 
-    redirect('/<scene>')
+    redirect('/' + scene)
