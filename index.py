@@ -29,7 +29,7 @@ def index():
 def index(scene):
     return template('index.tpl', focus=scene)
 
-@BASE.route('/audiofile/<scene>', method=['GET', 'POST'])
+@BASE.route('/audiofile/<scene>', method="POST")
 def audiofile(scene):
     t = request.POST['text']
     scene_voice = VOICES[scene]
@@ -60,3 +60,19 @@ def audiofile(scene):
     ws.close()
 
     redirect('/' + scene)
+
+@BASE.route('/test_json', method="POST")
+def test_json():
+    arb_json = json.loads(request.POST["json"])
+    print(arb_json)
+    ws = create_connection(SOCKET_URL)
+    message = {
+        "action": "sendmessage",
+        "data": arb_json
+    }
+    sock_json = json.dumps(message)
+    print(f"Sending JSON {sock_json} through websocket {SOCKET_URL}")
+    ws.send(sock_json)
+    ws.close()
+
+    redirect('/')
