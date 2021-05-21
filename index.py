@@ -61,8 +61,8 @@ def audiofile(scene):
 
     redirect('/' + scene)
 
-@BASE.route('/test_json', method="POST")
-def test_json():
+@BASE.route('/send_json', method="POST")
+def send_json():
     arb_json = json.loads(request.POST["json"])
     print(arb_json)
     ws = create_connection(SOCKET_URL)

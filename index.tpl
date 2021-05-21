@@ -53,10 +53,10 @@
     </div>
 
      <div class="ui container">
-        <form class="ui form", action="/test_json" method="POST">
+        <form class="ui form", action="/send_json" method="POST">
             <div class="ui segment very padded">
                 <div class="field">
-                    <label>Change scene from mechanic to doctor</label>
+                    <label>Change scene from mechanic to doctor (i.e., sends {"scene": "garage", "action": "changescene", "value": "doctor"})</label>
                     <input type="hidden" name="json" value='{"scene": "garage", "action": "changescene", "value": "doctor"}'>
                 </div>
                 <div>
@@ -67,7 +67,7 @@
     </div>
 
     <div class="ui container">
-        <form class="ui form", action="/test_json" method="POST">
+        <form class="ui form", action="/send_json" method="POST">
             <div class="ui segment very padded">
                 <div class="field">
                     <label>Test arbitrary JSON: type in arbitrary json and it will send through the websocket. If the string entered is not in correct json format it will crash</label>
