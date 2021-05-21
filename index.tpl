@@ -16,7 +16,7 @@
             <div class="ui segment very padded">
                 <div class="field">
                     <label>Mechanic speech</label>
-                    %if scene == "garage":
+                    %if focus == "garage":
                         <input type="text" name="text"  placeholder="Mechanic text" autofocus>
                     %else:
                         <input type="text" name="text"  placeholder="Mechanic text">
@@ -34,7 +34,7 @@
             <div class="ui segment very padded">
                 <div class="field">
                     <label>Doctor speech</label>
-                    %if scene == "doctor":
+                    %if focus == "doctor":
                         <input type="text" name="text"  placeholder="Doctor text" autofocus>
                     %else:
                         <input type="text" name="text"  placeholder="Doctor text">
