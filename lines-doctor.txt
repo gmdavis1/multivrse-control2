@@ -1,5 +1,5 @@
-Hello. My name is Dr. Jackson. What brings you to the clinic today?
 Sorry, I didn't understand that. Can you repeat it please?
+Hello. My name is Dr. Jackson. What brings you to the clinic today?
 When did the headaches start?
 How often do you have the headaches?
 Are the headaches the same for the whole day, or is there a time of the day when they feel worse?
