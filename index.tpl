@@ -24,11 +24,26 @@
                         </div>
 
                         <div>
-                            <button class="ui primary fluid button" type="submit">SEND MECHANIC SPEECH</button>
+                            <button class="ui primary fluid button" type="submit" style="background-color: green">SEND MECHANIC SPEECH</button>
                         </div>
                     </div>
                 </form>
+
+                %for line in lines_mechanic:
+                <form class="ui form", action="/audiofile/garage" method="POST">
+                    <div class="field">
+                        <input type="hidden" name="text" value="{{line}}">
+                    </div>
+
+                    <div>
+                        <button class="ui primary fluid button" type="submit" style="background-color: green">{{line}}</button>
+                    </div>
+                </form>
+                %end
+
             </div>
+
+            
 
             <div class="column">
                 <form class="ui form", action="/audiofile/doctor" method="POST">
@@ -43,10 +58,23 @@
                         </div>
 
                         <div>
-                            <button class="ui primary fluid button" type="submit">SEND DOCTOR SPEECH</button>
+                            <button class="ui primary fluid button" type="submit" style="background-color: grey">SEND DOCTOR SPEECH</button>
                         </div>
                     </div>
                 </form>
+
+                %for line in lines_doctor:
+                <form class="ui form", action="/audiofile/doctor" method="POST">
+                    <div class="field">
+                        <input type="hidden" name="text" value="{{line}}">
+                    </div>
+
+                    <div>
+                        <button class="ui primary fluid button" type="submit" style="background-color: grey">{{line}}</button>
+                    </div>
+                </form>
+                %end
+
             </div>
 
         </div>

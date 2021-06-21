@@ -1,0 +1,30 @@
+Hello. My name is Dr. Jackson. What brings you to the clinic today?
+Sorry, I didn't understand that. Can you repeat it please?
+When did the headaches start?
+How often do you have the headaches?
+Are the headaches the same for the whole day, or is there a time of the day when they feel worse?
+Can you describe how the headaches feel?
+Is there any particular part of your head where you feel the headaches?
+On a scale of 0 to 10, where 0 is no pain and 10 is the worst pain imaginable, what would you say these headaches are?
+Does anything seem to make the headaches worse?
+Does anything seem to make the headaches better?
+Have you noticed any other symptoms related to this?
+Have you experienced any nausea or vomiting?
+Have you experienced any muscle weakness or numbness?
+Can you tell me about your diet and exercise?
+Do you have any allergies to food and medications?
+Do you smoke?
+Do you drink alcohol?
+Do you use recreational drugs?
+Do you drink tea or coffee?
+Is there anything else you would like to tell me about your symptoms?
+It sounds like you are having tension headaches, which are quite common. You can keep taking Tylenol or I can prescribe a stronger pain reliever if you would like.
+I'll give you a prescription for Naprosyn. Take one pill 2 or 3 times per day with water and food.
+Ok. I suggest you cut down on your coffee intake as well. If you are still having the headaches after a week, please call our office and schedule another appointment.
+I'd also like to schedule some follow-up tests to rule out other causes. I'd like to do a full blood test and eye test. We may also schedule a head CT or MRI after.
+These tests are precautionary, to rule our other causes like a brain tumor.
+Do you have any more questions for me?
+Try to reduce your stress levels and get more sleep. If you are still having the headaches after a week, please call our office and schedule another appointment.
+What insurance provider do you have?
+Yes, we accept United HealthNet. Please show your card to the receptionist.
+Thanks for coming in. Please speak with the receptionist after this to pay and to schedule the follow-up tests. Goodbye.

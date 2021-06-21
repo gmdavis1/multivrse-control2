@@ -21,13 +21,25 @@ VOICES = {
     },
 }
 
+LINES_MECHANIC = []
+with open("lines-mechanic.txt") as f:
+    LINES_MECHANIC = f.read().splitlines()
+
+LINES_DOCTOR = []
+with open("lines-doctor.txt") as f:
+    LINES_DOCTOR = f.read().splitlines()
+
 @BASE.route('/')
 def index():
-    return template('index.tpl', focus="none")
+    return template('index.tpl', focus="none", 
+        lines_mechanic = LINES_MECHANIC, 
+        lines_doctor = LINES_DOCTOR)
 
 @BASE.route('/<scene>')
 def index(scene):
-    return template('index.tpl', focus=scene)
+    return template('index.tpl', focus=scene, 
+        lines_mechanic = LINES_MECHANIC, 
+        lines_doctor = LINES_DOCTOR)
 
 @BASE.route('/audiofile/<scene>', method="POST")
 def audiofile(scene):
