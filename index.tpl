@@ -42,6 +42,16 @@
                     </div>
                 </form>
 
+                <form class="ui form", action="/audiofile/garage" method="POST">
+                    <div class="field">
+                        <input type="hidden" name="text" value="Sorry, I didn't understand that. Can you repeat it please?">
+                    </div>
+                    
+                    <div class="ui segment padded">
+                        <button class="ui primary fluid button" type="submit" style="background-color: darkgreen">Sorry, I didn't understand that. Can you repeat it please?</button>
+                    </div>
+                </form>
+
                 %for line in lines_mechanic:
                 <form class="ui form", action="/audiofile/garage" method="POST">
                     <div class="field">
@@ -99,6 +109,16 @@
                         <div>
                             <button class="ui primary fluid button" type="submit" style="background-color: grey">SEND DOCTOR SPEECH</button>
                         </div>
+                    </div>
+                </form>
+
+                <form class="ui form", action="/audiofile/doctor" method="POST">
+                    <div class="field">
+                        <input type="hidden" name="text" value="Sorry, I didn't understand that. Can you repeat it please?">
+                    </div>
+                    
+                    <div class="ui segment padded">
+                        <button class="ui primary fluid button" type="submit" style="background-color: black;">Sorry, I didn't understand that. Can you repeat it please?</button>
                     </div>
                 </form>
 
