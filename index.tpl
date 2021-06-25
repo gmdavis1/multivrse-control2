@@ -12,6 +12,19 @@
         <div class="ui two column grid">
 
             <div class="column">
+                <div class="ui container">
+                    <form class="ui form", action="/send_json" method="POST">
+                        <div class="ui segment very padded">
+                            <div class="field">
+                                <input type="hidden" name="json" value='{"scene": "intro", "action": "changescene", "value": "garage"}'>
+                            </div>
+                            <div>
+                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: INTRO -> GARAGE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
                 <form class="ui form", action="/audiofile/garage" method="POST">
                     <div class="ui segment very padded">
                         <div class="field">
@@ -41,11 +54,37 @@
                 </form>
                 %end
 
+                <div class="ui container">
+                    <form class="ui form", action="/send_json" method="POST">
+                        <div class="ui segment very padded">
+                            <div class="field">
+                                <input type="hidden" name="json" value='{"scene": "garage", "action": "changescene", "value": "intro"}'>
+                            </div>
+                            <div>
+                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: GARAGE -> INTRO</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
             </div>
 
             
 
             <div class="column">
+                <div class="ui container">
+                    <form class="ui form", action="/send_json" method="POST">
+                        <div class="ui segment very padded">
+                            <div class="field">
+                                <input type="hidden" name="json" value='{"scene": "intro", "action": "changescene", "value": "doctor"}'>
+                            </div>
+                            <div>
+                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: INTRO -> DOCTOR</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
                 <form class="ui form", action="/audiofile/doctor" method="POST">
                     <div class="ui segment very padded">
                         <div class="field">
@@ -75,23 +114,22 @@
                 </form>
                 %end
 
+                <div class="ui container">
+                    <form class="ui form", action="/send_json" method="POST">
+                        <div class="ui segment very padded">
+                            <div class="field">
+                                <input type="hidden" name="json" value='{"scene": "doctor", "action": "changescene", "value": "intro"}'>
+                            </div>
+                            <div>
+                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: DOCTOR -> INTRO</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
             </div>
 
         </div>
-    </div>
-
-     <div class="ui container">
-        <form class="ui form", action="/send_json" method="POST">
-            <div class="ui segment very padded">
-                <div class="field">
-                    <label>Change scene from mechanic to doctor (i.e., sends {"scene": "garage", "action": "changescene", "value": "doctor"})</label>
-                    <input type="hidden" name="json" value='{"scene": "garage", "action": "changescene", "value": "doctor"}'>
-                </div>
-                <div>
-                    <button class="ui primary fluid button" type="submit">CHANGE SCENE TO DOCTOR</button>
-                </div>
-            </div>
-        </form>
     </div>
 
     <div class="ui container">
