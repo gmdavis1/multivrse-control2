@@ -15,8 +15,8 @@ VOICES = {
         "pitch": 0
     },
     "doctor": {
-        "voice": {"name": "en-US-Wavenet_E", "ssmlGender": texttospeech.SsmlVoiceGender.FEMALE}, 
-        "speed": 0.9, 
+        "voice": {"name": "en-US-Wavenet_D", "ssmlGender": texttospeech.SsmlVoiceGender.MALE}, 
+        "speed": 1.0, 
         "pitch": 0
     },
 }

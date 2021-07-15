@@ -16,76 +16,6 @@
                     <form class="ui form", action="/send_json" method="POST">
                         <div class="ui segment very padded">
                             <div class="field">
-                                <input type="hidden" name="json" value='{"scene": "intro", "action": "changescene", "value": "garage"}'>
-                            </div>
-                            <div>
-                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: INTRO -> GARAGE</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <form class="ui form", action="/audiofile/garage" method="POST">
-                    <div class="ui segment very padded">
-                        <div class="field">
-                            <label>Mechanic speech</label>
-                            %if focus == "garage":
-                            <input type="text" name="text"  placeholder="Mechanic text" autofocus>
-                            %else:
-                            <input type="text" name="text"  placeholder="Mechanic text">
-                            %end
-                        </div>
-
-                        <div>
-                            <button class="ui primary fluid button" type="submit" style="background-color: green">SEND MECHANIC SPEECH</button>
-                        </div>
-                    </div>
-                </form>
-
-                <form class="ui form", action="/audiofile/garage" method="POST">
-                    <div class="field">
-                        <input type="hidden" name="text" value="Sorry, I didn't understand that. Can you repeat it please?">
-                    </div>
-                    
-                    <div class="ui segment padded">
-                        <button class="ui primary fluid button" type="submit" style="background-color: darkgreen">Sorry, I didn't understand that. Can you repeat it please?</button>
-                    </div>
-                </form>
-
-                %for line in lines_mechanic:
-                <form class="ui form", action="/audiofile/garage" method="POST">
-                    <div class="field">
-                        <input type="hidden" name="text" value="{{line}}">
-                    </div>
-
-                    <div>
-                        <button class="ui primary fluid button" type="submit" style="background-color: green">{{line}}</button>
-                    </div>
-                </form>
-                %end
-
-                <div class="ui container">
-                    <form class="ui form", action="/send_json" method="POST">
-                        <div class="ui segment very padded">
-                            <div class="field">
-                                <input type="hidden" name="json" value='{"scene": "garage", "action": "changescene", "value": "intro"}'>
-                            </div>
-                            <div>
-                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: GARAGE -> INTRO</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-
-            
-
-            <div class="column">
-                <div class="ui container">
-                    <form class="ui form", action="/send_json" method="POST">
-                        <div class="ui segment very padded">
-                            <div class="field">
                                 <input type="hidden" name="json" value='{"scene": "intro", "action": "changescene", "value": "doctor"}'>
                             </div>
                             <div>
@@ -100,9 +30,9 @@
                         <div class="field">
                             <label>Doctor speech</label>
                             %if focus == "doctor":
-                            <input type="text" name="text"  placeholder="Doctor text" autofocus>
+                            <input type="text" name="text"  placeholder=" " autofocus>
                             %else:
-                            <input type="text" name="text"  placeholder="Doctor text">
+                            <input type="text" name="text"  placeholder=" ">
                             %end
                         </div>
 
@@ -142,6 +72,75 @@
                             </div>
                             <div>
                                 <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: DOCTOR -> INTRO</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <div class="column">
+                <div class="ui container">
+                    <form class="ui form", action="/send_json" method="POST">
+                        <div class="ui segment very padded">
+                            <div class="field">
+                                <input type="hidden" name="json" value='{"scene": "intro", "action": "changescene", "value": "garage"}'>
+                            </div>
+                            <div>
+                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: INTRO -> GARAGE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <form class="ui form", action="/audiofile/garage" method="POST">
+                    <div class="ui segment very padded">
+                        <div class="field">
+                            <label>Mechanic speech</label>
+                            %if focus == "garage":
+                            <input type="text" name="text"  placeholder=" " autofocus>
+                            %else:
+                            <input type="text" name="text"  placeholder=" ">
+                            %end
+                        </div>
+
+                        <div>
+                            <button class="ui primary fluid button" type="submit" style="background-color: green">SEND MECHANIC SPEECH</button>
+                        </div>
+                    </div>
+                </form>
+
+                <form class="ui form", action="/audiofile/garage" method="POST">
+                    <div class="field">
+                        <input type="hidden" name="text" value="Sorry, I didn't understand that. Can you repeat it please?">
+                    </div>
+                    
+                    <div class="ui segment padded">
+                        <button class="ui primary fluid button" type="submit" style="background-color: darkgreen">Sorry, I didn't understand that. Can you repeat it please?</button>
+                    </div>
+                </form>
+
+                %for line in lines_mechanic:
+                <form class="ui form", action="/audiofile/garage" method="POST">
+                    <div class="field">
+                        <input type="hidden" name="text" value="{{line}}">
+                    </div>
+
+                    <div>
+                        <button class="ui primary fluid button" type="submit" style="background-color: green">{{line}}</button>
+                    </div>
+                </form>
+                %end
+
+                <div class="ui container">
+                    <form class="ui form", action="/send_json" method="POST">
+                        <div class="ui segment very padded">
+                            <div class="field">
+                                <input type="hidden" name="json" value='{"scene": "garage", "action": "changescene", "value": "intro"}'>
+                            </div>
+                            <div>
+                                <button class="ui primary fluid button" type="submit" style="background-color: blue">SCENE CHANGE: GARAGE -> INTRO</button>
                             </div>
                         </div>
                     </form>
