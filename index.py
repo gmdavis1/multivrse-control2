@@ -11,12 +11,12 @@ SOCKET_URL = "wss://e5pvp3ghmc.execute-api.us-east-2.amazonaws.com/Prod"
 VOICES = {
     "garage": {
         "voice": {"name": "en-US-Wavenet_D", "ssmlGender": texttospeech.SsmlVoiceGender.MALE},
-        "speed": 1.0, 
+        "speed": 0.9, 
         "pitch": 0
     },
     "doctor": {
         "voice": {"name": "en-US-Wavenet_D", "ssmlGender": texttospeech.SsmlVoiceGender.MALE}, 
-        "speed": 1.0, 
+        "speed": 0.9, 
         "pitch": 0
     },
 }
