@@ -15,6 +15,7 @@
                 <div class="ui container">
                     <form class="ui form", action="/send_json" method="POST">
                         <div class="ui segment very padded">
+                            <h3>START CLOUD RECORDING!!!</h3>
                             <div class="field">
                                 <input type="hidden" name="json" value='{"scene": "intro", "action": "changescene", "value": "doctor"}'>
                             </div>
